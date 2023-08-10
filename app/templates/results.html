@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Results</title>
+</head>
+<body>
+    <h1>Game Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Outcome</th>
+                <th>Word</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+                {% for result in player.game_results %}
+                    <tr>
+                        <td>{{ player.username }}</td>
+                        <td>{{ result.outcome }}</td>
+                        <td>{{ result.word }}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

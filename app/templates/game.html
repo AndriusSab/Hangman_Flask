@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <h1>Welcome to Hangman Game!</h1>
+    <p>Attempts left: {{ game.max_attempts }}</p>
+    <p>Word: {{ game.display_word() }}</p>
+    <pre>{{ game.display_hangman() }}</pre>
+
+    <form method="POST" action="{{ url_for('game') }}">
+        <label for="guess">Guess a letter or word:</label>
+        <input type="text" id="guess" name="guess" maxlength="1" required>
+        <button type="submit">Submit Guess</button>
+    </form>
+
+    <p>{{ game.get_message() }}</p>
+
+    <a href="{{ url_for('play_again') }}">Play Again</a>
+</body>
+</html>
