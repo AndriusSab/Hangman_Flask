@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Configuration settings
 app.config['SECRET_KEY'] = 'your_secret_key_here'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database_name.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hangman.db'
 
 # Initialize extensions
 db = SQLAlchemy(app)
@@ -25,13 +25,13 @@ def load_user(user_id):
 # Import and register your route modules
 from app.routes import game, login, player, results, registration
 
-app.register_blueprint(game)
-app.register_blueprint(login)
-app.register_blueprint(player)
-app.register_blueprint(results)
-app.register_blueprint(registration)
+# app.register_blueprint(game)
+# app.register_blueprint(login)
+# app.register_blueprint(player)
+# app.register_blueprint(results)
+# app.register_blueprint(registration)
 
 # ... (other configurations and routes)
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
