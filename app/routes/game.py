@@ -5,7 +5,7 @@ from app.hangman.words_list import get_random_words_list
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
-    hangman_game = HangmanGame()  # Create a new instance for each user
+    hangman_game = HangmanGame()  
 
     if request.method == 'POST':
         guess = request.form.get('guess', '').lower()
@@ -32,7 +32,7 @@ def game():
         if hangman_game.is_game_over():
             flash('Game Over. You are out of attempts!', 'danger')
 
-        # Redirect to the same route to prevent form resubmission
+      
         return redirect(url_for('game'))
     
     return render_template('game.html', game=hangman_game)
