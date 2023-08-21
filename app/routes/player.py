@@ -1,8 +1,8 @@
 # app/routes/player.py
 
-from flask import render_template, flash, redirect
-from app import app
+from flask import render_template, flash, redirect, url_for
 from app.models.player import Player
+from app import app, db
 
 @app.route('/player/<int:player_id>')
 def player_profile(player_id):

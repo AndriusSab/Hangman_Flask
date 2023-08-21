@@ -1,8 +1,8 @@
 
 import random
 from typing import List
-from words_list import get_random_words_list
-from hangman_states import hangman_states
+from .words_list import get_random_words_list
+from .hangman_states import hangman_states
 from art import text2art
 
 
@@ -14,6 +14,7 @@ class HangmanGame:
         self.max_attempts: int = 10
         self.hangman_states: List[str] = hangman_states
         self.current_hangman_state: int = 0
+        self.incorrect_guesses = 0
 
     def print_welcome(self) -> None:
         welcome_text = """

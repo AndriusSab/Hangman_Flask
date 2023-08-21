@@ -13,7 +13,7 @@ def login():
         player = Player.query.filter_by(username=username).first()
 
         if player and player.check_password(password):
-            # Store user's ID in the session
+           
             session['user_id'] = player.id
             flash('Logged in successfully!', 'success')
             return redirect(url_for('game'))
