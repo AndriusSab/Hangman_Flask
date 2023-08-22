@@ -1,12 +1,7 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html>
-<head>
-    <title>Hangman Game</title>
-</head>
-<body>
-    <h1>Welcome to Hangman Game!</h1>
-    <a href="{{ url_for('register') }}">Register</a>
-    <a href="{{ url_for('login') }}">Login</a>
-</body>
-</html>
+{% block content %}
+
+<h1>Hangman Game</h1>
+
+{% endblock %}

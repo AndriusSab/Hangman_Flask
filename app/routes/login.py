@@ -8,15 +8,15 @@ def login():
     form = LoginForm()
 
     if form.validate_on_submit():
-        username = form.username.data
+        email = form.email.data
         password = form.password.data
-        player = Player.query.filter_by(username=username).first()
+        player = Player.query.filter_by(email=email).first()
 
         if player and player.check_password(password):
-           
             session['user_id'] = player.id
             flash('Logged in successfully!', 'success')
-            return redirect(url_for('game'))
+            return redirect(url_for('game'))  # Redirect to the "game" route
+
         else:
             flash('Invalid username or password', 'danger')
 

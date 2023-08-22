@@ -1,17 +1,26 @@
-from app import db
 from typing import Optional
+from app import db
+import bcrypt
 
 class Player(db.Model):
+    __tablename__ = "Player"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    game_results = db.relationship('GameResult', backref='player', lazy=True)
+    password = db.Column(db.String(128))  # This column will store plain passwords
+
+    def set_password(self, password):
+        self.password = password  # Store the plain password directly (not recommended)
+
+    def check_password(self, password):
+        return self.password == password  # Compare stored plain password with entered password
 
 def get_player_by_id(player_id: int) -> Optional[Player]:
     return Player.query.get(player_id)
 
-def create_player(username: str, email: str) -> Player:
+def create_player(username: str, email: str, password: str) -> Player:
     new_player = Player(username=username, email=email)
+    new_player.set_password(password)  # Set the plain password
     db.session.add(new_player)
     db.session.commit()
     return new_player

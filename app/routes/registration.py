@@ -3,7 +3,7 @@ from app import app, db
 from app.forms.registration import RegistrationForm
 from app.models.player import Player
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/registration', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
 
@@ -12,7 +12,8 @@ def register():
         new_player.set_password(form.password.data)
         db.session.add(new_player)
         db.session.commit()
+
         flash('Registration successful! You can now log in.', 'success')
-        return redirect(url_for('login'))
+        return redirect(url_for('login'))  # Redirect to the login page
 
     return render_template('registration.html', form=form)

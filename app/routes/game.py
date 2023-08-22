@@ -6,7 +6,11 @@ from app.hangman.words_list import get_random_words_list
 @app.route('/game', methods=['GET', 'POST'])
 def game():
     hangman_game = HangmanGame()  
-
+    current_word = hangman_game.secret_word
+    print(current_word)
+    guessed_letters = hangman_game.guesses
+    print(guessed_letters)
+    print(hangman_game.secret_word)
     if request.method == 'POST':
         guess = request.form.get('guess', '').lower()
         
@@ -31,8 +35,11 @@ def game():
 
         if hangman_game.is_game_over():
             flash('Game Over. You are out of attempts!', 'danger')
+        
+
+        
 
       
         return redirect(url_for('game'))
     
-    return render_template('game.html', game=hangman_game)
+    return render_template('game.html', current_word = current_word, guessed_letters = guessed_letters)
