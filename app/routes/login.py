@@ -16,7 +16,7 @@ def login():
             session['user_id'] = player.id
             flash('Logged in successfully!', 'success')
             session.pop('hangman_game', None)
-            return redirect(url_for('game'))  # Redirect to the "game" route
+            return redirect(url_for('game'))  
 
         else:
             flash('Invalid username or password', 'danger')

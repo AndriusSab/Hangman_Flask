@@ -10,3 +10,5 @@ class GameResult(db.Model):
     total_wins = db.Column(db.Integer, default=0)
     total_losses = db.Column(db.Integer, default=0)
     player_id = db.Column(db.Integer, db.ForeignKey('Player.id'))
+    
+    

@@ -9,13 +9,13 @@
         <hr>
         <div class="text-center">
             <h4>Current Word: {{ current_word }}</h4>
-            <p>Guessed Letters: {{ guessed_letters | join(', ') }}</p>
+            <p>Guessed Letters or Words: {{ guessed_letters | join(', ') }}</p>
         </div>
         <hr>
         <form method="post" action="{{ url_for('game') }}">
             <div class="form-group">
                 <label for="guess">Enter a Letter or Word:</label>
-                <input type="text" class="form-control" id="guess" name="guess" maxlength="1" required>
+                <input type="text" class="form-control" id="guess" name="guess" required>
             </div>
             <button type="submit" class="btn btn-primary">Guess</button>
         </form>

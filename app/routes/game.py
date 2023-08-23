@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, url_for, flash, session
 from app import app
 from app.hangman.hangman import HangmanGame
 from app.hangman.words_list import get_random_words_list
+from app.models import GameResult 
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
@@ -22,21 +23,19 @@ def game():
             if hangman_game.is_game_over():
                 if hangman_game.max_attempts <= 0:
                     flash('Game Over. You are out of attempts!', 'danger')
-                else:
-                    message += " Game Over."
+                    message = " Game Over."
+                    return redirect(url_for('game_over'))  # Redirect to "game_over" route
 
-                secret_word = hangman_game.secret_word
+                flash(message, 'info')
 
-                if hangman_game.has_won(): ?cia nebaigta logika
-                    flash("Congratulations! You've guessed the word: " + secret_word, 'success')
-                    return redirect(url_for('win'))  # Redirect to "win" route
+    session['hangman_game'] = hangman_game.to_dict()
 
-            flash(message, 'info')
+    if hangman_game.has_won():
+        flash("Congratulations! You've guessed the word: " + hangman_game.secret_word, 'success')
+        return redirect(url_for('win')) 
 
-        session['hangman_game'] = hangman_game.to_dict()
-
-        if hangman_game.is_game_over() and hangman_game.max_attempts <= 0:
-            return redirect(url_for('game_over'))  
+    if hangman_game.is_game_over() and hangman_game.max_attempts <= 0:
+        return redirect(url_for('game_over'))  
 
     current_word = hangman_game.display_word()
     guessed_letters = hangman_game.guesses
