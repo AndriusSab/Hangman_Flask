@@ -2,23 +2,31 @@
 
 {% block content %}
 
-<div class="row mt-5">
-    <div class="col-md-6 offset-md-3">
-        <h1 class="text-center">Hangman Game</h1>
-        <p class="text-center">Guess the word before the hangman is complete!</p>
-        <hr>
-        <div class="text-center">
-            <h4>Current Word: {{ current_word }}</h4>
-            <p>Guessed Letters or Words: {{ guessed_letters | join(', ') }}</p>
-        </div>
-        <hr>
-        <form method="post" action="{{ url_for('game') }}">
-            <div class="form-group">
-                <label for="guess">Enter a Letter or Word:</label>
-                <input type="text" class="form-control" id="guess" name="guess" required>
+<div class="game-container">
+    <div class="background-image" style="background-image: url({{ url_for('static', filename='images/background.jpg') }});"></div>
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Hangman Game</h1>
+            <p class="text-center">Guess the word before the hangman is complete!</p>
+            <hr>
+            <div class="text-center">
+                <h4>Current Word: {{ current_word }}</h4>
+                <p>Guessed Letters or Words: {{ guessed_letters | join(', ') }}</p>
             </div>
-            <button type="submit" class="btn btn-primary">Guess</button>
-        </form>
+            <hr>
+            <form method="post" action="{{ url_for('game') }}">
+                <div class="form-group">
+                    <label for="guess">Enter a Letter or Word:</label>
+                    <input type="text" class="form-control" id="guess" name="guess" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guess</button>
+            </form>
+        </div>
+    </div>
+    <div class="hangman-container">
+        <div class="hangman-image">
+            <img src="{{ url_for('static', filename='images/' ~ current_hangman_state ~ '.png') }}" alt="Hangman Image">
+        </div>
     </div>
 </div>
 

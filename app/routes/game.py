@@ -40,5 +40,6 @@ def game():
     current_word = hangman_game.display_word()
     guessed_letters = hangman_game.guesses
     secret_word = hangman_game.secret_word
-  
-    return render_template('game.html', current_word=current_word, guessed_letters=guessed_letters, secret_word=secret_word)
+    current_hangman_state = hangman_game.current_hangman_state  # Add this line
+
+    return render_template('game.html', current_word=current_word, guessed_letters=guessed_letters, secret_word=secret_word, current_hangman_state=current_hangman_state)
