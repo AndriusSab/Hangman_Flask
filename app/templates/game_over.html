@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+        <h1>You Lost</h1>
+        <p>Unfortunately, you're out of attempts. The word was: {{ secret_word }}</p>
+        <p><a href="{{ url_for('game') }}">Play Again</a></p>
+    </div>
+{% endblock content %}

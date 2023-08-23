@@ -11,12 +11,12 @@ class HangmanGame:
         self.words_list: List[str] = get_random_words_list()
         self.secret_word: str = random.choice(self.words_list).lower()
         self.guesses: List[str] = []
-        self.max_attempts: int = 10
+        self.max_attempts: int = 7
         self.hangman_states: List[str] = hangman_states
         self.current_hangman_state: int = 0
         self.incorrect_guesses = 0
 
-    def print_welcome(self) -> None:
+    def print_welcome(self) -> str:
         welcome_text = """
         Welcome to Hangman Game!
        
@@ -37,19 +37,20 @@ class HangmanGame:
         print(self.hangman_states[self.current_hangman_state])
 
 
-    def make_guess(self, guess: str) -> bool:
+    def make_guess(self, guess: str) -> str:
         guess = guess.lower()
         if guess == self.secret_word:
             self.guesses.append(guess)
-            return True
+            return "Congratulations! You've guessed the word: " + self.secret_word
         elif guess in self.guesses:
-            return False
+            return "You've already guessed that letter."
         else:
             self.guesses.append(guess)
             if guess not in self.secret_word:
                 self.max_attempts -= 1
                 self.current_hangman_state += 1
-            return False
+                return "Incorrect guess! Try again"
+            return "Correct guess! Keep it up!"
 
     def is_game_over(self) -> bool:
         if self.max_attempts <= 0 or self.current_hangman_state >= len(self.hangman_states):
@@ -57,6 +58,27 @@ class HangmanGame:
         if "_" not in self.display_word():
             return True
         return False
+    
+    def to_dict(self):
+     return {
+        "words_list": self.words_list,
+        "secret_word": self.secret_word,
+        "guesses": self.guesses,
+        "max_attempts": self.max_attempts,
+        "current_hangman_state": self.current_hangman_state,
+        "incorrect_guesses": self.incorrect_guesses
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        game = cls()
+        game.words_list = data["words_list"]
+        game.secret_word = data["secret_word"]
+        game.guesses = data["guesses"]
+        game.max_attempts = data["max_attempts"]
+        game.current_hangman_state = data["current_hangman_state"]
+        game.incorrect_guesses = data["incorrect_guesses"]
+        return game
 
     def play(self) -> None:
         self.print_welcome()

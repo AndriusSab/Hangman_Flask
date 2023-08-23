@@ -36,4 +36,5 @@ from app.routes.game import *
 from app.routes.registration import *
 from app.routes.results import *
 from app.routes.player import *
-
+from app.routes.game_over import *
+from app.routes.win import *
