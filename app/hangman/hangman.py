@@ -1,18 +1,16 @@
 
 import random
 from typing import List
-from .words_list import get_random_words_list
-from .hangman_states import hangman_states
+from .get_random_word import get_random_word
+
 
 
 
 class HangmanGame:
     def __init__(self):
-        # self.words_list: List[str] = get_random_words_list()
-        self.secret_word: str = get_random_words_list()
+        self.secret_word: str = get_random_word()
         self.guesses: List[str] = []
-        self.max_attempts: int = 50
-        self.hangman_states: List[str] = hangman_states
+        self.max_attempts: int = 10
         self.current_hangman_state: int = 0
         self.incorrect_guesses = 0
 
@@ -25,10 +23,6 @@ class HangmanGame:
             else:
                 displayed_word += " _ "
         return displayed_word
-
-    def display_hangman(self) -> None:
-        print(self.hangman_states[self.current_hangman_state])
-
 
     def make_guess(self, guess: str) -> str:
         guess = guess.lower()
@@ -45,13 +39,15 @@ class HangmanGame:
             return "Incorrect guess! Try again."
         
     def has_won(self) -> bool:
+        if self.secret_word in self.guesses: 
+            return True
         for letter in self.secret_word:
             if letter not in self.guesses:
                 return False
         return True
 
     def is_game_over(self) -> bool:
-        if self.max_attempts <= 0 or self.current_hangman_state >= len(self.hangman_states):
+        if self.max_attempts <= 0 or self.current_hangman_state >= 7:
             return True
         if " _ " not in self.display_word():
             return True
@@ -61,7 +57,6 @@ class HangmanGame:
 
     def to_dict(self) -> dict:
         return {
-            # "words_list": self.words_list,
             "secret_word": self.secret_word,
             "guesses": self.guesses,
             "max_attempts": self.max_attempts,
@@ -72,7 +67,6 @@ class HangmanGame:
     @classmethod
     def from_dict(cls, data: dict):
         game = cls()
-        # game.words_list = data["words_list"]
         game.secret_word = data["secret_word"]
         game.guesses = data["guesses"]
         game.max_attempts = data["max_attempts"]

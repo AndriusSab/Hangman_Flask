@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from app import app
 from app.hangman.hangman import HangmanGame
-from app.hangman.words_list import get_random_words_list
+from app.hangman.get_random_word import get_random_word
 from app.models import GameResult 
 
 @app.route('/game', methods=['GET', 'POST'])

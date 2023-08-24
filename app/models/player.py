@@ -7,20 +7,20 @@ class Player(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(128))  # This column will store plain passwords
+    password = db.Column(db.String(128))  
 
     def set_password(self, password):
-        self.password = password  # Store the plain password directly (not recommended)
+        self.password = password  
 
     def check_password(self, password):
-        return self.password == password  # Compare stored plain password with entered password
+        return self.password == password 
 
 def get_player_by_id(player_id: int) -> Optional[Player]:
     return Player.query.get(player_id)
 
 def create_player(username: str, email: str, password: str) -> Player:
     new_player = Player(username=username, email=email)
-    new_player.set_password(password)  # Set the plain password
+    new_player.set_password(password) 
     db.session.add(new_player)
     db.session.commit()
     return new_player
