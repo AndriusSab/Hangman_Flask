@@ -9,7 +9,7 @@ def reset_game_session():
 @app.route('/game_over', methods=['GET', 'POST'])
 def game_over():
     secret_word = session['hangman_game']['secret_word']  
-    reset_game_session()  # Reset the game session
+    reset_game_session()  
 
     if request.method == 'POST':
         return redirect(url_for('game'))  

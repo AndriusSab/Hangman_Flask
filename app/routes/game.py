@@ -24,7 +24,7 @@ def game():
                 if hangman_game.max_attempts <= 0:
                     flash('Game Over. You are out of attempts!', 'danger')
                     message = " Game Over."
-                    return redirect(url_for('game_over'))  # Redirect to "game_over" route
+                    return redirect(url_for('game_over'))  
 
                 flash(message, 'info')
 
@@ -40,6 +40,6 @@ def game():
     current_word = hangman_game.display_word()
     guessed_letters = hangman_game.guesses
     secret_word = hangman_game.secret_word
-    current_hangman_state = hangman_game.current_hangman_state  # Add this line
+    current_hangman_state = hangman_game.current_hangman_state 
 
     return render_template('game.html', current_word=current_word, guessed_letters=guessed_letters, secret_word=secret_word, current_hangman_state=current_hangman_state)

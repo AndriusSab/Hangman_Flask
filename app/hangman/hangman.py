@@ -10,7 +10,7 @@ class HangmanGame:
     def __init__(self):
         self.secret_word: str = get_random_word()
         self.guesses: List[str] = []
-        self.max_attempts: int = 10
+        self.max_attempts: int = 7
         self.current_hangman_state: int = 0
         self.incorrect_guesses = 0
 
@@ -26,17 +26,24 @@ class HangmanGame:
 
     def make_guess(self, guess: str) -> str:
         guess = guess.lower()
+        
         if guess == self.secret_word:
             self.guesses.append(guess)
             return "Congratulations! You've guessed the word!"
-        elif guess in self.guesses:
+        
+        if guess in self.guesses:
             return "You've already guessed that letter."
-        else:
-            self.guesses.append(guess)
-            if guess != self.secret_word:
-                self.max_attempts -= 1
-                self.current_hangman_state += 1
-            return "Incorrect guess! Try again."
+        
+        self.guesses.append(guess)
+        
+        if guess != self.secret_word and guess not in self.secret_word:
+            self.max_attempts -= 1
+            self.current_hangman_state += 1
+        
+        return "Incorrect guess! Try again."
+            
+            
+        
         
     def has_won(self) -> bool:
         if self.secret_word in self.guesses: 
