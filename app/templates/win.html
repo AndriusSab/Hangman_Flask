@@ -6,7 +6,7 @@
         <p>Congratulations, you've guessed the word: {{ secret_word }}</p>
         <p><a href="{{ url_for('game') }}">Play Again</a></p>
         <div class="win">
-            <img src="{{ url_for('static', filename='win.png') }}" alt="win.png">
+            <img src="{{ url_for('static', filename='images/win.png') }}" alt="win.png" style="max-width: 100%; height: auto;">
         </div>
     </div>
 {% endblock %}
