@@ -10,7 +10,7 @@ class HangmanGame:
     def __init__(self):
         self.secret_word: str = get_random_word()
         self.guesses: List[str] = []
-        self.max_attempts: int = 7
+        self.max_attempts: int = 100
         self.current_hangman_state: int = 0
         self.incorrect_guesses = 0
 
