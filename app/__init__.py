@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 
 
+
 app = Flask(__name__)
 app.static_folder = 'static'
 
@@ -19,6 +20,7 @@ with app.app_context():
 bcrypt = Bcrypt(app)
 
 migrate = Migrate(app, db)
+
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 

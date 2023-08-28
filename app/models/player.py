@@ -1,4 +1,5 @@
 from typing import Optional
+from sqlalchemy.orm import relationship
 from app import db
 import bcrypt
 
@@ -8,7 +9,8 @@ class Player(db.Model):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(128))  
-
+    game_results = relationship("GameResult", back_populates="player")
+    
     def set_password(self, password):
         self.password = password  
 

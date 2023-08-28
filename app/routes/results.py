@@ -1,10 +1,8 @@
-# app/routes/results.py
-
 from flask import render_template
-from app import app
-from app.models.player import Player
+from app import app, db
+from app.models import GameResult
 
-@app.route('/results')
+@app.route('/results', methods=['GET'])
 def results():
-    players = Player.query.all()
-    return render_template('results.html', players=players)
+    results = GameResult.query.all()
+    return render_template('results.html', results=results)
