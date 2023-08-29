@@ -28,7 +28,7 @@ Clone the repository:
    pip install -r requirements.txt
 
 
-Run the Flask development server:
+   Run the Flask development server:
  
  ```bash
    flask run
