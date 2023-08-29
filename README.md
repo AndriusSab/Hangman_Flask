@@ -59,10 +59,18 @@ View your game results and track your performance in the game.
 ## Screenshots
 
 **Home page**
-![Home page](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/37672ff3-0540-4016-9779-ac407b65c060)
+![Home page](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/db3d4169-3f79-4fd2-81d1-f40cf97e3c88)
+
 
 **Registration page**
 ![registration](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/5fc4f989-e822-4b4c-80e0-3b3a2dc65a53)
+
+**Game page**
+![Game1](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/500e5371-756a-47a8-a550-16ce363f138b)
+![Game2](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/40862eff-06da-4041-a941-6245f8a1f518)
+![Game3](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/02fb7fab-f3ab-444d-9ac8-9faef1ab6707)
+![Game4](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/9000dd8a-0c6d-497f-b9a3-c038ef8107af)
+
 
 
 
