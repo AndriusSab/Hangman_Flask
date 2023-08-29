@@ -45,7 +45,7 @@ Players continue guessing until they either solve the word or run out of attempt
 3. **Run the Flask Development Server:**
 
     ```bash
-    `flask run`
+    ```flask run```
     ```
 
    This will start the development server, and you can access the Hangman game by opening your web browser and navigating to `http://localhost:5000`.
