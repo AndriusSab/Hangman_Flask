@@ -1,7 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Hangman Game</h1>
-
+    <div class="content-section">
+        <h1 class="display-4">Welcome to Hangman Game!</h1>
+        <img src="{{ url_for('static', filename='images/hang.gif') }}" alt="hang.gif" style="max-width: 100%; height: auto;">
+        <p class="lead">Hangman is a word guessing game where you have to guess the letters of a secret word. You have a limited number of attempts (10) to guess the word correctly before the hanging man is completed.</p>
+        
+        <div class="card bg-light mb-3">
+            <div class="card-header">Game Rules:</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">A random word is chosen as the secret word.</li>
+                    <li class="list-group-item">You can guess one letter at a time.</li>
+                    <li class="list-group-item">If the guessed letter is in the secret word, it will be revealed in the correct positions.</li>
+                    <li class="list-group-item">If the guessed letter is not in the secret word, part of the hanging man is drawn.</li>
+                    <li class="list-group-item">You can continue guessing letters until you either guess the entire word or the hanging man is completely drawn.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p>Have fun playing Hangman!</p>
+    </div>
 {% endblock %}

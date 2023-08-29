@@ -23,10 +23,3 @@ class GameResultsCrud:
 
     
 
-    def as_dict(self, game_result):
-        return {
-            "id": game_result.id,
-            "word": game_result.word,
-            "outcome": game_result.outcome,
-            "player_id": game_result.player_id,
-        }

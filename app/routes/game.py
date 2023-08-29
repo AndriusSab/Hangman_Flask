@@ -20,32 +20,27 @@ def game():
             flash('Please enter letters only.', 'danger')
         else:
             message = hangman_game.make_guess(guess)
-
-            if hangman_game.is_game_over():
-                if hangman_game.max_attempts <= 0:
-                    flash('Game Over. You are out of attempts!', 'danger')
-                    message = "Game Over."
-                    outcome = "lost"
-                else:
-                    flash(message, 'info')
-                    outcome = "win"
-
-                # Save the game result
-                player_id = 1 
-                crud = GameResultsCrud(db.session)
-                crud.create_game_result(hangman_game.secret_word, outcome, player_id)
-
-                
-                
+            flash(message, 'info')
+                              
 
     session['hangman_game'] = hangman_game.to_dict()
 
     if hangman_game.has_won():
         flash("Congratulations! You've guessed the word: " + hangman_game.secret_word, 'success')
+        player_id = 1 
+        outcome = "win"
+        crud = GameResultsCrud(db.session)
+        crud.create_game_result(hangman_game.secret_word, outcome, player_id)
         return redirect(url_for('win'))
 
     if hangman_game.is_game_over() and hangman_game.max_attempts <= 0:
+        flash('Game Over. You are out of attempts!', 'danger')
+        player_id = 1 
+        outcome = "lost"
+        crud = GameResultsCrud(db.session)
+        crud.create_game_result(hangman_game.secret_word, outcome, player_id)
         return redirect(url_for('game_over'))
+    
 
     current_word = hangman_game.display_word()
     guessed_letters = hangman_game.guesses
