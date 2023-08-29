@@ -21,6 +21,7 @@ Players continue guessing until they either solve the word or run out of attempt
    cd Hangman-Flask
     
 2. Create a virtual environment and install the required dependencies:
+   
    python -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
