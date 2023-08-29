@@ -20,7 +20,7 @@ Players continue guessing until they either solve the word or run out of attempt
    git clone https://github.com/your-username/Hangman-Flask.git
    cd Hangman-Flask
     
-2. Create a virtual environment and install the required dependencies:
+ Create a virtual environment and install the required dependencies:
   
   ```bash   
    python3 -m venv venv
@@ -28,7 +28,7 @@ Players continue guessing until they either solve the word or run out of attempt
    pip install -r requirements.txt
 
 
-3. Run the Flask development server:
+ Run the Flask development server:
  ```bash
 flask run
 
