@@ -28,7 +28,7 @@ Players continue guessing until they either solve the word or run out of attempt
    pip install -r requirements.txt
 
 
- Run the Flask development server:
+ 2. Run the Flask development server:
  
  ```bash
 flask run
