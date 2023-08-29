@@ -61,6 +61,8 @@ View your game results and track your performance in the game.
 **Home page**
 ![Home page](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/37672ff3-0540-4016-9779-ac407b65c060)
 
+**Registration page**
+![registration](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/5fc4f989-e822-4b4c-80e0-3b3a2dc65a53)
 
 
 
