@@ -23,11 +23,11 @@ Players continue guessing until they either solve the word or run out of attempt
 2. Create a virtual environment and install the required dependencies:
   
   ```bash   
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
 
-   
+
 3. Run the Flask development server:
  ```bash
 flask run
