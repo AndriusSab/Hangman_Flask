@@ -56,6 +56,12 @@ Start a new game and guess the secret word letter by letter.
 Receive feedback on your guesses and continue playing until you win or lose.
 View your game results and track your performance in the game.
 
+## Screenshots
+
+**Home page**
+![Home page](https://github.com/AndriusSab/Hangman_Flask/assets/124807066/37672ff3-0540-4016-9779-ac407b65c060)
+
+
 
 
 
