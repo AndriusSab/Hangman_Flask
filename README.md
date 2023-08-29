@@ -14,16 +14,43 @@ Players continue guessing until they either solve the word or run out of attempt
 
 ## Installation
 
-### Clone the Repository
+1. **Clone the Repository:**
 
-   ```bash
-   git clone https://github.com/your-username/Hangman-Flask.git
-   cd Hangman-Flask
+    ```bash
+    git clone https://github.com/your-username/Hangman-Flask.git
+    cd Hangman-Flask
+    ```
 
-**## Create a Virtual Environment and Install Dependencies**
- 
-python3 -m venv venv
+2. **Create a Virtual Environment and Install Dependencies:**
 
+    ```bash
+    python3 -m venv venv
+    ```
+
+    Activate the virtual environment:
+    - On macOS/Linux:
+      ```bash
+      source venv/bin/activate
+      ```
+    - On Windows:
+      ```bash
+      venv\Scripts\activate
+      ```
+
+    Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Run the Flask Development Server:**
+
+    ```bash
+    flask run
+    ```
+
+   This will start the development server, and you can access the Hangman game by opening your web browser and navigating to `http://localhost:5000`.
+
+Adjust the placeholders (such as `your-username`) with the actual information specific to your project.
 
 
 
