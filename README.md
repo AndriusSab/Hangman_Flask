@@ -16,15 +16,20 @@ Players continue guessing until they either solve the word or run out of attempt
 
 ### Clone the Repository
 
-```bash
-git clone https://github.com/your-username/Hangman-Flask.git
-cd Hangman-Flask
-    
-###Create a Virtual Environment and Install Dependencies:
-   ```bash
- 
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/Hangman-Flask.git
    cd Hangman-Flask
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Hangman-Flask.git
+   cd Hangman-Flask
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Hangman-Flask.git
+   cd Hangman-Flask
+
+
 
