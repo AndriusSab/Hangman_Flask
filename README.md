@@ -22,7 +22,7 @@ Players continue guessing until they either solve the word or run out of attempt
    cd Hangman-Flask
 
 1. Clone the repository:
-   ```bash
+ 
 python3 -m venv venv
 
 1. Clone the repository:
