@@ -20,7 +20,7 @@ Players continue guessing until they either solve the word or run out of attempt
    git clone https://github.com/your-username/Hangman-Flask.git
    cd Hangman-Flask
 
-### Create a Virtual Environment and Install Dependencies
+**## Create a Virtual Environment and Install Dependencies**
  
 python3 -m venv venv
 
