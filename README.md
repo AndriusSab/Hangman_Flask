@@ -14,7 +14,7 @@ Players continue guessing until they either solve the word or run out of attempt
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository:
 
    ```bash
    git clone https://github.com/your-username/Hangman-Flask.git
@@ -28,8 +28,8 @@ Players continue guessing until they either solve the word or run out of attempt
    pip install -r requirements.txt
 
 
- 2. Run the Flask development server:
+Run the Flask development server:
  
  ```bash
-flask run
+   flask run
 
