@@ -50,7 +50,6 @@ Players continue guessing until they either solve the word or run out of attempt
 
    This will start the development server, and you can access the Hangman game by opening your web browser and navigating to `http://localhost:5000`.
 
-Adjust the placeholders (such as `your-username`) with the actual information specific to your project.
 
 
 
