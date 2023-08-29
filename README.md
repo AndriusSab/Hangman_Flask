@@ -50,6 +50,12 @@ Players continue guessing until they either solve the word or run out of attempt
 
    This will start the development server, and you can access the Hangman game by opening your web browser and navigating to `http://localhost:5000`.
 
+Usage
+Register a new player account or log in if you already have an account.
+Start a new game and guess the secret word letter by letter.
+Receive feedback on your guesses and continue playing until you win or lose.
+View your game results and track your performance in the game.
+
 
 
 
