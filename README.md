@@ -28,6 +28,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
    
-Run the Flask development server:
+3. Run the Flask development server:
+ ```bash
 flask run
 
