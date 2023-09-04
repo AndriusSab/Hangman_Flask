@@ -1,7 +1,6 @@
 from typing import Optional
 from sqlalchemy.orm import relationship
 from app import db
-import bcrypt
 
 class Player(db.Model):
     __tablename__ = "Player"
